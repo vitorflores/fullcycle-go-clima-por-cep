@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+
+  testes:
+    build:
+      context: .
+      target: builder
+    command: go test -v ./...
+    profiles:
+      - testes
